@@ -21,6 +21,14 @@ export class CreateProducts1622232847448 implements MigrationInterface {
             type: "varchar",
           },
           {
+            name: "SKU",
+            type: "varchar",
+          },
+          {
+            name: "bar_code",
+            type: "varchar",
+          },
+          {
             name: "platform",
             type: "varchar",
           },
