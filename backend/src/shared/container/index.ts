@@ -6,6 +6,8 @@ import { UsersRepository } from "@modules/accounts/infra/typeorm/repositories/Us
 import { UsersTokensRepository } from "@modules/accounts/infra/typeorm/repositories/UsersTokensRepository";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
+import { OrdersRepository } from "@modules/orders/infra/typeorm/repositories/OrdersRepository";
+import { IOrdersRepository } from "@modules/orders/repositories/IOrdersRepository";
 import { CategoriesRepository } from "@modules/products/infra/typeorm/repositories/CategoriesRepository";
 import { ProductsImagesRepository } from "@modules/products/infra/typeorm/repositories/ProductsImagesRepository";
 import { ProductsRepository } from "@modules/products/infra/typeorm/repositories/ProductsRepository";
@@ -36,4 +38,9 @@ container.registerSingleton<IProductsRepository>(
 container.registerSingleton<IProductsImagesRepository>(
   "ProductsImagesRepository",
   ProductsImagesRepository
+);
+
+container.registerSingleton<IOrdersRepository>(
+  "OrdersRepository",
+  OrdersRepository
 );

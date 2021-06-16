@@ -2,6 +2,7 @@ import { ICreateProductDTO } from "@modules/products/dtos/ICreateProductDTO";
 import { IUpdateProductsQuantityDTO } from "@modules/products/dtos/IUpdateProductsQuantityDTO";
 import { Product } from "@modules/products/infra/typeorm/entities/Product";
 
+import { IFindProducts } from "../IFindProducts";
 import { IProductsRepository } from "../IProductsRepository";
 
 class ProductsRepositoryInMemory implements IProductsRepository {
@@ -35,6 +36,10 @@ class ProductsRepositoryInMemory implements IProductsRepository {
     this.products.push(product);
 
     return product;
+  }
+
+  async findAllById(products: IFindProducts[]): Promise<Product[]> {
+    throw new Error("Method not implemented.");
   }
 
   async findByName(name: string): Promise<Product> {
